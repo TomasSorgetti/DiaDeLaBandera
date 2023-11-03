@@ -1,0 +1,42 @@
+.cont{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.wordsCont{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.wordCont{
+  display: flex;
+  gap: 6px;
+}
+.word{
+  width: 40px;
+  height: 40px;
+  background-color: #885529;
+  border-radius: 6px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+.letersCont{
+  display: flex;
+  gap: 6px;
+}
+.leter {
+  color: black;
+  font-size: 2rem;
+}
+.activeButton{
+  background-color: #87603d;
+}
+
+
+
+.clean{
+  width: 60px;
+}
