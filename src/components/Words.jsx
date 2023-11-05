@@ -11,8 +11,9 @@ const Words = ({
   newList,
   listCount,
   setListCount,
+  setConfirm,
+  confirm,
 }) => {
-
   return (
     <div className="wordsCont">
       {newList.words?.map((word, index) => (
@@ -29,7 +30,8 @@ const Words = ({
               activeList={activeList}
               setActiveList={setActiveList}
               newList={newList.words}
-              index={index}
+              confirm={confirm}
+              setConfirm={setConfirm}
             />
           ))}
         </div>

@@ -6,6 +6,7 @@ import Leter from "./components/Leter.jsx";
 
 function App() {
   const [activeWord, setActiveWord] = useState("");
+  const [confirm , setConfirm] = useState(false);
   const [activeList, setActiveList] = useState(0);
   const [listCount, setListCount] = useState([]); //conteo de palabras completadas
   const [clean, setClean] = useState(false);
@@ -15,6 +16,9 @@ function App() {
   const handleClick = (word) => {
     let newWord = activeWord + word;
     setActiveWord(newWord);
+  };
+  const handleSend = () => {
+    setConfirm(true)
   };
 
   return (
@@ -31,6 +35,8 @@ function App() {
             newList={newList}
             listCount={listCount}
             setListCount={setListCount}
+            confirm={confirm}
+            setConfirm={setConfirm}
           />
         </article>
         <article className="letersCont">
@@ -44,15 +50,23 @@ function App() {
             />
           ))}
         </article>
-        <button
-          className="clean"
-          onClick={() => {
-            setActiveWord("");
-            setClean(!clean);
-          }}
-        >
-          Clean
-        </button>
+        <article>
+          <button
+            className="clean"
+            onClick={() => {
+              setActiveWord("");
+              setClean(!clean);
+            }}
+          >
+            Clean
+          </button>
+          <button
+            className="send"
+            onClick={handleSend}
+          >
+            Send
+          </button>
+        </article>
       </section>
     </main>
   );

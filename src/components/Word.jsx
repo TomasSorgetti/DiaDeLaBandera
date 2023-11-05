@@ -11,6 +11,8 @@ const Word = ({
   activeList,
   setActiveList,
   newList,
+  setConfirm,
+  confirm,
 }) => {
   const [active, setActive] = useState(false);
 
@@ -31,7 +33,8 @@ const Word = ({
         setListCount([]);
       });
     }
-    if (activeWord === word) {
+
+    if (confirm && activeWord === word) {
       // Cuando la palabra escrita por el usuario es igual a la palabra
       setActive(true); // La palabra se muestra
       if (!listCount.includes(activeWord)) {
@@ -40,7 +43,12 @@ const Word = ({
         setActiveWord(""); // Se borra la palabra escrita por el usuario
       }
     }
-  }, [activeWord, listCount, newList, setActiveWord, setListCount]);
+
+    if (confirm && activeWord !== word) {
+      setActiveWord("");
+      setConfirm(false);
+    }
+  }, [activeWord, listCount, newList, setActiveWord, setListCount,confirm]);
 
   return <span className="word">{active ? letter : ""}</span>;
 };

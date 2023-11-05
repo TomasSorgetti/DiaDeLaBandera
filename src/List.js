@@ -4,7 +4,7 @@ const list = [
     leters: ["A", "R", "A", "B", "C"],
   },
   {
-    words: ["TEEN", "TEE", "NEET", "NET"],
+    words: ["TEEN", "TEE", "TEN", "NET"],
     leters: ["E", "E", "N", "T"],
   },
 ];
