@@ -13,6 +13,8 @@ const Word = ({
   newList,
   setConfirm,
   confirm,
+  response,
+  setResponse,
 }) => {
   const [active, setActive] = useState(false);
 
@@ -39,23 +41,30 @@ const Word = ({
       setActive(true); // La palabra se muestra
       if (!listCount.includes(activeWord)) {
         // Actualiza el estado de listCount
+        setResponse(true);
         setListCount([...listCount, activeWord]);
-        setActiveWord(""); // Se borra la palabra escrita por el usuario
+          setTimeout(() => {
+            setActiveWord(""); // Se borra la palabra escrita por el usuario
+            setResponse(null);
+          }, 1000);
       }
     }
 
     if (confirm && activeWord !== word) {
-      setActiveWord("");
-      setConfirm(false);
+      const condition= newList.filter(item=>item===activeWord)
+      if (condition.length == 0) {
+        setResponse(false);
+      }
+      setTimeout(() => {
+        setActiveWord("");
+        setConfirm(false);
+        setResponse(null);
+      }, 1000);
     }
-  }, [activeWord, listCount, newList, setActiveWord, setListCount,confirm]);
+  }, [activeWord, listCount, newList, setActiveWord, setListCount, confirm]);
 
   return (
-    <span
-      className={`${
-        active ? "activeWordConfirm" : "word"
-      }`}
-    >
+    <span className={`${active ? "activeWordConfirm" : "word"}`}>
       {active ? letter : ""}
     </span>
   );

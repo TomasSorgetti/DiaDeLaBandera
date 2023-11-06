@@ -13,7 +13,10 @@ const Words = ({
   setListCount,
   setConfirm,
   confirm,
+  response,
+  setResponse,
 }) => {
+  
   return (
     <div className="wordsCont">
       {newList.words?.map((word, index) => (
@@ -32,6 +35,8 @@ const Words = ({
               newList={newList.words}
               confirm={confirm}
               setConfirm={setConfirm}
+              response={response}
+              setResponse={setResponse}
             />
           ))}
         </div>

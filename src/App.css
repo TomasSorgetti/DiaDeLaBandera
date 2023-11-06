@@ -149,6 +149,16 @@ h1{
   line-height: normal;
   letter-spacing: 16px;
 }
+.trueActiveWord {
+  transition: background-color 0.3s;
+  background-color: #05B741;
+}
+.falseActiveWord {
+  transition: background-color 0.3s;
+  background-color: #B81010;
+}
+
+
 .send{
   border: none;
   background-color: transparent;

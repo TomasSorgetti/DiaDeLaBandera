@@ -10,6 +10,7 @@ function App() {
   const [confirm, setConfirm] = useState(false);
   const [activeList, setActiveList] = useState(0);
   const [listCount, setListCount] = useState([]); //conteo de palabras completadas
+  const [response, setResponse] = useState(null);
   const [clean, setClean] = useState(false);
 
   const newList = list[activeList] ? list[activeList] : list[0];
@@ -40,10 +41,15 @@ function App() {
             setListCount={setListCount}
             confirm={confirm}
             setConfirm={setConfirm}
+            response={response}
+            setResponse={setResponse}
           />
         </article>
         <div className="activeWordCont">
-          <div className="activeWord">
+          <div
+            className={`activeWord ${response === true && "trueActiveWord"} 
+            ${response === false && "falseActiveWord"} `}
+          >
             <span>{activeWord}</span>
           </div>
           <button className="send" onClick={handleSend}>
