@@ -4,8 +4,6 @@
 }
 
 
-
-
 /* Header */
 header{
   display: flex;
@@ -31,8 +29,6 @@ h1{
   font-weight: 400;
   line-height: normal;
 }
-
-
 
 
 
@@ -154,13 +150,10 @@ h1{
   line-height: normal;
 }
 .activeButton{
-  background-color: #2796FB;
+  background-color: #2B3C4D;
 }
-
-
-
-.clean{
-  width: 60px;
+.activeButton span{
+  color: white;
 }
 
 
