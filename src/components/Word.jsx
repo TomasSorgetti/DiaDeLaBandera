@@ -50,7 +50,15 @@ const Word = ({
     }
   }, [activeWord, listCount, newList, setActiveWord, setListCount,confirm]);
 
-  return <span className="word">{active ? letter : ""}</span>;
+  return (
+    <span
+      className={`${
+        active ? "activeWordConfirm" : "word"
+      }`}
+    >
+      {active ? letter : ""}
+    </span>
+  );
 };
 
 export default Word;

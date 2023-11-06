@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 
-const Leter = ({ leter, handleClick, listCount, clean }) => {
+const Leter = ({ leter, handleClick, listCount, clean, confirm }) => {
   const [active, setActive] = useState(false);
   useEffect(() => {
     setActive(false);
-  }, [listCount, clean]);
+  }, [listCount, clean, confirm]);
 
   return (
     <button
@@ -16,7 +16,7 @@ const Leter = ({ leter, handleClick, listCount, clean }) => {
       }}
       disabled={active ? true : false}
     >
-      {leter}
+      <span>{leter}</span>
     </button>
   );
 };

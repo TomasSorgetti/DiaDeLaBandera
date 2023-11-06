@@ -1,7 +1,47 @@
+.main{
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+
+
+/* Header */
+header{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: start;
+  margin-bottom: 40px;
+}
+span{
+  color: #2B3C4D;  
+  font-family: MonteCarlo;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+h1{
+  margin: 0;
+  color: #2B3C4D;  
+  font-family: Paytone One;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+
+
+
+
+/* Words */
 .cont{
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
 }
 .wordsCont{
   display: flex;
@@ -12,31 +52,124 @@
   display: flex;
   gap: 6px;
 }
+
 .word{
-  width: 40px;
-  height: 40px;
-  background-color: #885529;
-  border-radius: 6px;
-  color: white;
   display: flex;
-  align-items: center;
+  width: 4.30431rem;
+  height: 4.30431rem;
+  padding: 0.39131rem;
+  flex-direction: column;
   justify-content: center;
-  font-weight: 800;
+  align-items: center;
+  gap: 0.39131rem;
+  border-radius: 0.99006rem;
+  border: 0.792px solid #74ACDF;
+  background: #FFF;
 }
+.activeWordConfirm{
+  display: flex;
+  width: 4.30431rem;
+  height: 4.30431rem;
+  padding: 0.39131rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.39131rem;
+  border-radius: 0.99006rem;
+  border: 0.792px solid #74ACDF;
+  background: #2796FB;
+
+  color: #FFF;
+  text-align: center;
+  font-family: Paytone One;
+  font-size: 2.34781rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+
+
+/* Active Word */
+.activeWordCont{
+  display: flex;
+  gap: 10px;
+}
+.activeWord{
+  min-width: 60px;
+  padding: 0rem 0.79206rem;
+  border-radius: 2.12869rem;
+  background: #2B3C4D;
+}
+.activeWord span{
+  color: #F5F5F5;  
+  text-align: center;
+  font-family: Paytone One;
+  font-size: 2.34781rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 16px;
+}
+.send{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* Leters */
 .letersCont{
   display: flex;
   gap: 6px;
 }
+
+
 .leter {
-  color: black;
-  font-size: 2rem;
+  display: flex;
+  width: 4.30431rem;
+  height: 4.30431rem;
+  padding: 0.39131rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.39131rem;
+  border-radius: 0.99006rem;
+  border: 0.792px solid #74ACDF;
+  background: #FFF;
+  cursor: pointer;
+}
+.leter span{
+  color: #2B3C4D;
+  text-align: center;
+  font-family: Paytone One;
+  font-size: 2.34781rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .activeButton{
-  background-color: #87603d;
+  background-color: #2796FB;
 }
 
 
 
 .clean{
   width: 60px;
+}
+
+
+
+@media screen and (min-width:1440px) {
+  span{
+    font-size: 3.17938rem;
+  }
+  h1{
+    font-size: 3.75rem;
+  }
 }
