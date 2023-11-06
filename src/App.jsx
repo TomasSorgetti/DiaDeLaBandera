@@ -65,6 +65,7 @@ function App() {
               listCount={listCount}
               clean={clean}
               confirm={confirm}
+              response={response}
             />
           ))}
         </article>
