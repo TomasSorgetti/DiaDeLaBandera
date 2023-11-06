@@ -99,8 +99,8 @@ h1{
   background: #2B3C4D;
 }
 .activeWord span{
-  color: #F5F5F5;  
-  text-align: center;
+  color: #F5F5F5; 
+  padding-left: 12px;
   font-family: Paytone One;
   font-size: 2.34781rem;
   font-style: normal;
