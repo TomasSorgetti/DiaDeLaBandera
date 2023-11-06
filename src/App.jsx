@@ -14,7 +14,7 @@ function App() {
   const [clean, setClean] = useState(false);
 
   const newList = list[activeList] ? list[activeList] : list[0];
-
+  
   const handleClick = (word) => {
     let newWord = activeWord + word;
     setActiveWord(newWord);
@@ -48,7 +48,9 @@ function App() {
         <div className="activeWordCont">
           <div
             className={`activeWord ${response === true && "trueActiveWord"} 
-            ${response === false && "falseActiveWord"} `}
+            ${response === false && "falseActiveWord"} ${
+              activeWord.length === 0 && "inactive"
+            }`}
           >
             <span>{activeWord}</span>
           </div>

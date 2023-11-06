@@ -35,6 +35,7 @@ const Word = ({
         setListCount([]);
       });
     }
+    
 
     if (confirm && activeWord === word) {
       // Cuando la palabra escrita por el usuario es igual a la palabra
@@ -49,7 +50,7 @@ const Word = ({
           }, 1000);
       }
     }
-
+    
     if (confirm && activeWord !== word) {
       const condition= newList.filter(item=>item===activeWord)
       if (condition.length == 0) {
@@ -63,6 +64,17 @@ const Word = ({
     }
   }, [activeWord, listCount, newList, setActiveWord, setListCount, confirm]);
 
+  useEffect(() => {
+    if (confirm && listCount.includes(activeWord)) {
+      setResponse(false);
+      setTimeout(() => {
+        setActiveWord("");
+        setConfirm(false);
+        setResponse(null);
+      }, 1000);
+    }
+  }, [confirm])
+  
   return (
     <span className={`${active ? "activeWordConfirm" : "word"}`}>
       {active ? letter : ""}

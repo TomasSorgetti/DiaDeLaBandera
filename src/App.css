@@ -139,6 +139,9 @@ h1{
   border-radius: 2.12869rem;
   background: #2B3C4D;
 }
+/* .inactive{
+  display: none;
+} */
 .activeWord span{
   color: #F5F5F5; 
   padding-left: 12px;
