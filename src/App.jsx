@@ -3,7 +3,9 @@ import list from "./List.js";
 import { useState } from "react";
 import Words from "./components/Words.jsx";
 import Leter from "./components/Leter.jsx";
+import DeleteIcon from "./assets/Delete.png";
 import arrow from "../src/assets/arrow.svg";
+
 
 function App() {
   const [activeWord, setActiveWord] = useState("");
@@ -54,6 +56,15 @@ function App() {
           >
             <span>{activeWord}</span>
           </div>
+          <button
+            className="send"
+            onClick={() => {
+              setActiveWord("");
+              setClean(!clean);
+            }}
+          >
+            <img src={DeleteIcon} alt="delete word" />
+          </button>
           <button className="send" onClick={handleSend}>
             <img src={arrow} alt="send answer" />
           </button>
@@ -71,17 +82,6 @@ function App() {
             />
           ))}
         </article>
-        {/* <article>
-          <button
-            className="clean"
-            onClick={() => {
-              setActiveWord("");
-              setClean(!clean);
-            }}
-          >
-            Clean
-          </button>
-        </article> */}
       </section>
     </main>
   );

@@ -76,7 +76,9 @@ const Word = ({
   }, [confirm])
   
   return (
-    <span className={`${active ? "activeWordConfirm" : "word"}`}>
+    <span
+      className={`${active ? "activeWordConfirm" : "word"}`}
+    >
       {active ? letter : ""}
     </span>
   );

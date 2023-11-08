@@ -16,11 +16,10 @@ const Words = ({
   response,
   setResponse,
 }) => {
-  
   return (
     <div className="wordsCont">
       {newList.words?.map((word, index) => (
-        <div key={index} className="wordCont">
+        <div key={index} className="wordCont" data-testid="word">
           {word.split("").map((letter, letterIndex) => (
             <Word
               key={letterIndex}
