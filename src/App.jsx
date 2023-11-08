@@ -5,7 +5,7 @@ import Words from "./components/Words.jsx";
 import Leter from "./components/Leter.jsx";
 import DeleteIcon from "./assets/Delete.png";
 import arrow from "../src/assets/arrow.svg";
-
+import Modals from "./components/Modals.jsx"
 
 function App() {
   const [activeWord, setActiveWord] = useState("");
@@ -14,6 +14,8 @@ function App() {
   const [listCount, setListCount] = useState([]); //conteo de palabras completadas
   const [response, setResponse] = useState(null);
   const [clean, setClean] = useState(false);
+
+  const [open, setOpen] = useState(false);
 
   const newList = list[activeList] ? list[activeList] : list[0];
   
@@ -45,6 +47,8 @@ function App() {
             setConfirm={setConfirm}
             response={response}
             setResponse={setResponse}
+            open={open}
+            setOpen={setOpen}
           />
         </article>
         <div className="activeWordCont">
@@ -83,6 +87,7 @@ function App() {
           ))}
         </article>
       </section>
+      <Modals open={open} setOpen={setOpen} />
     </main>
   );
 }

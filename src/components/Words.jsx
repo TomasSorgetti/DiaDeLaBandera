@@ -15,6 +15,8 @@ const Words = ({
   confirm,
   response,
   setResponse,
+  open,
+  setOpen,
 }) => {
   return (
     <div className="wordsCont">
@@ -36,6 +38,8 @@ const Words = ({
               setConfirm={setConfirm}
               response={response}
               setResponse={setResponse}
+              open={open}
+              setOpen={setOpen}
             />
           ))}
         </div>

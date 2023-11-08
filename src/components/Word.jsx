@@ -13,27 +13,27 @@ const Word = ({
   newList,
   setConfirm,
   confirm,
-  response,
   setResponse,
+  open,
+  setOpen,
 }) => {
   const [active, setActive] = useState(false);
-
+  const handleClose = () => setOpen(false);
+  const handleOpen = () => setOpen(true);
+  useEffect(() => {
+    if (listCount.length === newList.length) {
+      handleOpen();
+      setTimeout(() => {
+        setActiveList(activeList + 1);
+        setListCount([]);
+        handleClose();
+      }, 4000);
+    }
+  }, [listCount, newList, open]);
+  
   useEffect(() => {
     if (!listCount.includes(word)) {
       setActive(false);
-    }
-    if (listCount.length === newList.length) {
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Congrats",
-        text: "You complete the level",
-        showConfirmButton: false,
-        timer: 2500,
-      }).then(() => {
-        setActiveList(activeList + 1);
-        setListCount([]);
-      });
     }
     
 
@@ -44,15 +44,16 @@ const Word = ({
         // Actualiza el estado de listCount
         setResponse(true);
         setListCount([...listCount, activeWord]);
-          setTimeout(() => {
-            setActiveWord(""); // Se borra la palabra escrita por el usuario
-            setResponse(null);
-          }, 1000);
+        setTimeout(() => {
+          setActiveWord(""); // Se borra la palabra escrita por el usuario
+          setResponse(null);
+          setConfirm(false);
+        }, 1000);
       }
     }
-    
+
     if (confirm && activeWord !== word) {
-      const condition= newList.filter(item=>item===activeWord)
+      const condition = newList.filter((item) => item === activeWord);
       if (condition.length == 0) {
         setResponse(false);
       }
@@ -73,12 +74,10 @@ const Word = ({
         setResponse(null);
       }, 1000);
     }
-  }, [confirm])
-  
+  }, [confirm]);
+
   return (
-    <span
-      className={`${active ? "activeWordConfirm" : "word"}`}
-    >
+    <span className={`${active ? "activeWordConfirm" : "word"}`}>
       {active ? letter : ""}
     </span>
   );
