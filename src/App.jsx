@@ -15,7 +15,7 @@ function App() {
   const [response, setResponse] = useState(null);
   const [clean, setClean] = useState(false);
 
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   
 
   const handleClick = (word) => {
