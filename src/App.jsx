@@ -16,7 +16,6 @@ function App() {
   const [clean, setClean] = useState(false);
 
   const [open, setOpen] = useState(false);
-  
 
   const handleClick = (word) => {
     let newWord = activeWord + word;
@@ -24,85 +23,84 @@ function App() {
   };
   const handleSend = () => {
     setConfirm(true);
-  }
+  };
 
   let content;
   if (!list[activeList]) {
-    content = <div>
-      <h1>Felicidades, has completado exitosamente el desafío</h1>
-    </div>;
+    content = (
+      <div>
+        <h1>Felicidades, has completado exitosamente el desafío</h1>
+      </div>
+    );
   } else {
     const newList = list[activeList];
+    
     content = (
       <>
         <header>
-          <span>Día de la Soberanía Nacional</span>
+          <span>Día de la Bandera</span>
           <h1>Adiviná las palabras</h1>
         </header>
-        <section className="cont">
-          <article className="">
-            <Words
-              activeWord={activeWord}
-              setActiveWord={setActiveWord}
-              activeList={activeList}
-              setActiveList={setActiveList}
-              newList={newList}
-              listCount={listCount}
-              setListCount={setListCount}
-              confirm={confirm}
-              setConfirm={setConfirm}
-              response={response}
-              setResponse={setResponse}
-              open={open}
-              setOpen={setOpen}
-            />
-            <div className="activeWordCont">
-              <div
-                className={`activeWord ${response === true && "trueActiveWord"} 
+
+        <div className="cont">
+          <Words
+            activeWord={activeWord}
+            setActiveWord={setActiveWord}
+            activeList={activeList}
+            setActiveList={setActiveList}
+            newList={newList}
+            listCount={listCount}
+            setListCount={setListCount}
+            confirm={confirm}
+            setConfirm={setConfirm}
+            response={response}
+            setResponse={setResponse}
+            open={open}
+            setOpen={setOpen}
+          />
+          <div className="activeWordCont">
+            <div
+              className={`activeWord ${response === true && "trueActiveWord"} 
             ${response === false && "falseActiveWord"} ${
-                  activeWord.length === 0 && "inactive"
-                }`}
-              >
-                <span>{activeWord}</span>
-              </div>
-              <button
-                className="send"
-                onClick={() => {
-                  setActiveWord("");
-                  setClean(!clean);
-                }}
-              >
-                <img src={DeleteIcon} alt="delete word" />
-              </button>
-              <button className="send" onClick={handleSend}>
-                <img src={arrow} alt="send answer" />
-              </button>
+                activeWord.length === 0 && "inactive"
+              }`}
+            >
+              <span>{activeWord}</span>
             </div>
-            <article className="letersCont">
-              {newList.leters.map((leter, index) => (
-                <Leter
-                  key={index}
-                  leter={leter}
-                  handleClick={handleClick}
-                  listCount={listCount}
-                  clean={clean}
-                  confirm={confirm}
-                  response={response}
-                />
-              ))}
-            </article>
-          </article>
-        </section>
+            <button
+              className="send"
+              onClick={() => {
+                setActiveWord("");
+                setClean(!clean);
+              }}
+            >
+              <img src={DeleteIcon} alt="delete word" />
+            </button>
+            <button className="send" onClick={handleSend}>
+              <img src={arrow} alt="send answer" />
+            </button>
+          </div>
+          <div className="letersCont">
+            {newList.leters.map((leter, index) => (
+              <Leter
+                key={index}
+                leter={leter}
+                handleClick={handleClick}
+                listCount={listCount}
+                clean={clean}
+                confirm={confirm}
+                response={response}
+              />
+            ))}
+          </div>
+        </div>
+
         <Modals open={open} setOpen={setOpen} />
       </>
     );
   }
 
-  return (
-    <main className="main">
-      {content}
-    </main>
-  );
+  return <main className="main">{content}</main>;
 }
 
-export default App
+export default App;

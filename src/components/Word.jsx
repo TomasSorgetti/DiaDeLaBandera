@@ -19,7 +19,11 @@ const Word = ({
 }) => {
   const [active, setActive] = useState(false);
   const handleClose = () => setOpen(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    setTimeout(() => {
+      setOpen(true);
+    }, 1500);
+  };
   useEffect(() => {
     if (listCount.length === newList.length) {
       handleOpen();
@@ -30,12 +34,11 @@ const Word = ({
       }, 4000);
     }
   }, [listCount, newList, open]);
-  
+
   useEffect(() => {
     if (!listCount.includes(word)) {
       setActive(false);
     }
-    
 
     if (confirm && activeWord === word) {
       // Cuando la palabra escrita por el usuario es igual a la palabra

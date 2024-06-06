@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import bg from "../assets/bgModal.png";
+import bg from "../assets/belgrano2.jpg";
 
 const style = {
   position: "absolute",
@@ -19,8 +19,8 @@ const style = {
   flexDirection: "column",
   gap: "2rem",
   backgroundImage: `url(${bg})`,
-    backgroundSize: "cover",
-  fontFamily:"none",
+  backgroundSize: "cover",
+  fontFamily: "none",
 };
 
 function Modals({ open }) {
