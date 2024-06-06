@@ -28,13 +28,21 @@ function App() {
   let content;
   if (!list[activeList]) {
     content = (
-      <div>
-        <h1>Felicidades, has completado exitosamente el desafío</h1>
+      <div className="complete">
+        <span>Felicidades</span>
+        <span>has completado exitosamente el desafío</span>
+        <button
+          onClick={() => {
+            setActiveList(0);
+          }}
+        >
+          Jugar de nuevo
+        </button>
       </div>
     );
   } else {
     const newList = list[activeList];
-    
+
     content = (
       <>
         <header>

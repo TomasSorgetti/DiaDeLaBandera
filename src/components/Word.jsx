@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import list from "../List";
 
 const Word = ({
   letter,
@@ -25,13 +26,19 @@ const Word = ({
     }, 1500);
   };
   useEffect(() => {
-    if (listCount.length === newList.length) {
+    if (listCount.length === newList.length && list[activeList + 1]) {
       handleOpen();
       setTimeout(() => {
         setActiveList(activeList + 1);
         setListCount([]);
         handleClose();
       }, 4000);
+    } else if (listCount.length === newList.length && !list[activeList + 1]) {
+      setTimeout(() => {
+        setActiveList(activeList + 1);
+        setListCount([]);
+        handleClose();
+      }, 1000);
     }
   }, [listCount, newList, open]);
 

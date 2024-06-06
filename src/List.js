@@ -1,18 +1,16 @@
 const list = [
   {
-    words: ["EMANCIPACION", "PATRIA", "NACION", "TROPA"],
-    leters: ["T", "R", "E", "A", "A", "M", "N", "C", "C", "I", "I", "O", "O", "N", "P"],
+    words: ["ESCARAPELA", "BANDERA", "LIBERTAD", "LIBERAL"],
+    leters: ["C", "N", "A", "R", "A", "E", "P", "L", "L","I","A","B","D","T","E","S"],
   },
-
   {
-    words: ["INDEPENDENCIA", "ESTADO", "DECISION", "DOMINIO"],
-    leters: ["O","O","M","S","T","D","I","I","E","E","E","A","D","P","N","N","N","C"],
+    words: ["INDEPENDENCIA", "REVOLUCIÓN", "EMANCIPACIÓN", "EDUCACIÓN"],
+    leters: ["I", "N","D","A", "R", "Ó", "L","O", "V", "M", "C","C","I","A","E","N","U","E","N","D","E","P"],
   },
-  
   {
-    words: ["AUTODETERMINACION", "AUTONOMIA", "UNIDAD", "AUTORIDAD"],
-    leters: ["D","P","M","C","A","A","U","O","O","T","T","M","N","E","E","R","I","C","I","D","N"],
+    words: ["PROGRESO", "ROSARIO", "PATRIA", "COMERCIO"],
+    leters: ["S", "O", "A", "I", "A", "T", "C", "P", "R","O","C","C","M","G","R","E"],
   },
 ];
 
-export default list
+export default list;
