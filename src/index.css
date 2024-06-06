@@ -2,7 +2,7 @@
 body{
     background-image: url("./assets/bandera.webp");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     /* background: linear-gradient(180deg, #EBF5FF 0%, #D2EAFF 100%), #FFF; */
     height: 98vh;
 }
