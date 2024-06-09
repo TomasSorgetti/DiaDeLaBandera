@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=MonteCarlo&family=Paytone+One&display=swap');
 body{
-    background-image: url("./assets/bandera.webp");
+    background-image: url("./assets/bandera.png");
     background-repeat: no-repeat;
+    background-position-x: center;
     background-size: cover;
     /* background: linear-gradient(180deg, #EBF5FF 0%, #D2EAFF 100%), #FFF; */
     height: 98vh;

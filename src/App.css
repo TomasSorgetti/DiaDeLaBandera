@@ -3,16 +3,15 @@
   margin: 0 auto;
 }
 
-
 /* Header */
 header {
   display: flex;
   flex-direction: column;
-  gap: 2px;
   text-align: start;
   margin-bottom: 40px;
 }
 .complete{
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +43,8 @@ header {
   cursor: pointer;
   color: #a8c7e3;
 }
-span {
+h1 {
+  margin: 0;
   color: white;
   font-family: MonteCarlo;
   font-size: 2rem;
@@ -53,7 +53,7 @@ span {
   line-height: normal;
 }
 
-h1 {
+p {
   margin: 0;
   color: white;
   font-family: Paytone One;
@@ -62,7 +62,14 @@ h1 {
   font-weight: 400;
   line-height: normal;
 }
-
+.level{
+  margin-left: 20px;
+  color: rgb(186, 186, 186);
+  font-family: Paytone One;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+}
 /* modal */
 #modal-modal-title{
   font-family: Paytone One;
@@ -284,12 +291,13 @@ h1 {
 }
 
 @media screen and (min-width:1024px) {
-  span {
-      font-size: 2.5rem;
+  
+  p {
+      font-size: 2.8rem;
     }
   
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
     }
   .cont{
     gap: 20px;
@@ -332,7 +340,10 @@ h1 {
   main {
     padding-left: 60px;
   }
-  span {
+  header{
+    margin-left: 60px;
+  }
+  p {
     font-size: 3.17938rem;
   }
   h1 {

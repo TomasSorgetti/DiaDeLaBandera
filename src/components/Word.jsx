@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Swal from "sweetalert2";
 import list from "../List";
 
 const Word = ({
@@ -29,12 +28,14 @@ const Word = ({
     if (listCount.length === newList.length && list[activeList + 1]) {
       handleOpen();
       setTimeout(() => {
+        localStorage.setItem("count", activeList + 1);
         setActiveList(activeList + 1);
         setListCount([]);
         handleClose();
       }, 4000);
     } else if (listCount.length === newList.length && !list[activeList + 1]) {
       setTimeout(() => {
+        localStorage.setItem("count", activeList + 1);
         setActiveList(activeList + 1);
         setListCount([]);
         handleClose();

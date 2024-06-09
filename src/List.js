@@ -1,4 +1,8 @@
 const list = [
+  // {
+  //   words: ["PATRIA"],
+  //   leters: ["P", "A", "T", "R", "I", "A"],
+  // },
   {
     words: ["ESCARAPELA", "BANDERA", "LIBERTAD", "LIBERAL"],
     leters: ["C", "N", "A", "R", "A", "E", "P", "L", "L","I","A","B","D","T","E","S"],

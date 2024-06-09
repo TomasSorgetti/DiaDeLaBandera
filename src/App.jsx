@@ -1,21 +1,30 @@
 import "./App.css";
 import list from "./List.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Words from "./components/Words.jsx";
 import Leter from "./components/Leter.jsx";
 import DeleteIcon from "./assets/Delete.png";
 import arrow from "../src/assets/arrow.svg";
 import Modals from "./components/Modals.jsx";
+import song from "./assets/song.mp3";
 
 function App() {
-  const [activeWord, setActiveWord] = useState("");
-  const [confirm, setConfirm] = useState(false);
-  const [activeList, setActiveList] = useState(0);
+  const [activeWord, setActiveWord] = useState(""); // palabra activa
+  const [confirm, setConfirm] = useState(false); // confirmar
+  const [activeList, setActiveList] = useState(0); // nivel del juego
   const [listCount, setListCount] = useState([]); //conteo de palabras completadas
-  const [response, setResponse] = useState(null);
-  const [clean, setClean] = useState(false);
+  const [response, setResponse] = useState(null); // respuesta
+  const [clean, setClean] = useState(false); // limpiar las palabras
+  const [open, setOpen] = useState(false); // modal al terminar el nivel
 
-  const [open, setOpen] = useState(false);
+  const actualLevel = Number(activeList) + 1;
+  // useeffect para empezar el juego con el nivel en que se dejó
+  useEffect(() => {
+    const storedCount = localStorage.getItem("count");
+    if (storedCount) {
+      setActiveList(storedCount);
+    }
+  }, []);
 
   const handleClick = (word) => {
     let newWord = activeWord + word;
@@ -25,32 +34,37 @@ function App() {
     setConfirm(true);
   };
 
-  let content;
+  // Si ya no tengo mas niveles retorna la pantalla de completado
   if (!list[activeList]) {
-    content = (
-      <div className="complete">
-        <span>Felicidades</span>
+    return (
+      <main className="complete">
+        <h1>Día de la Bandera</h1>
         <span>has completado exitosamente el desafío</span>
+        <audio src={song} type="audio/mpeg" autoPlay>
+          Your browser does not support the <code>audio</code> element.
+        </audio>
         <button
           onClick={() => {
+            localStorage.setItem("count", 0);
             setActiveList(0);
           }}
         >
           Jugar de nuevo
         </button>
-      </div>
+      </main>
     );
   } else {
     const newList = list[activeList];
-
-    content = (
+    return (
       <>
         <header>
-          <span>Día de la Bandera</span>
-          <h1>Adiviná las palabras</h1>
+          <h1>Día de la Bandera</h1>
+          <p>
+            Adiviná las palabras{" "}
+            <span className="level">Nivel {actualLevel}</span>
+          </p>
         </header>
-
-        <div className="cont">
+        <main className="cont">
           <Words
             activeWord={activeWord}
             setActiveWord={setActiveWord}
@@ -101,14 +115,11 @@ function App() {
               />
             ))}
           </div>
-        </div>
-
+        </main>
         <Modals open={open} setOpen={setOpen} />
       </>
     );
   }
-
-  return <main className="main">{content}</main>;
 }
 
 export default App;
