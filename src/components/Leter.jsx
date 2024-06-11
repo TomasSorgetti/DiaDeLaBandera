@@ -42,7 +42,7 @@ const Leter = ({
       }}
       disabled={active || conditionDisable ? true : false}
     >
-      <span>{leter}</span>
+      {leter}
     </button>
   );
 };

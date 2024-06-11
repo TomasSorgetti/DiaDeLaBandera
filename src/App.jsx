@@ -24,10 +24,9 @@ function App() {
   const [clean, setClean] = useState(false); // limpiar las palabras
   const [open, setOpen] = useState(false); // modal al terminar el nivel
   const [shake, setShake] = useState(false);
-
+  console.log(activeWordIndex);
   const [soundPlayOk, setSoundPlayOk] = useState(false);
   const [soundPlayErr, setSoundPlayErr] = useState(false);
-
   const initializeSounds = () => {
     if (!soundok && !sounderr) {
       soundok = new Howl({
@@ -74,8 +73,10 @@ function App() {
     let newWord = activeWord.slice(0, -1);
     setActiveWord(newWord);
     setDeleteLastWord(true);
-    let newIndexList = activeWordIndex.slice(0, -1);
-    setActiveWordIndex(newIndexList);
+    setActiveWordIndex((prev) => {
+      if (prev.length === 0) return prev;
+      return prev.slice(0, -1);
+    });
   };
 
   const handleSend = () => {

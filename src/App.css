@@ -2,7 +2,6 @@
   width: 90%;
   margin: 0 auto;
 }
-
 @keyframes shake {
   0% {
     transform: translateX(0);
@@ -231,15 +230,12 @@ p {
 .activeWordConfirm:nth-child(11) {
   transition-delay: 1.1s;
 }
-
 .activeWordConfirm:nth-child(12) {
   transition-delay: 1.2s;
 }
-
 .activeWordConfirm:nth-child(13) {
   transition-delay: 1.3s;
 }
-
 
 
 /* Active Word */
@@ -249,14 +245,12 @@ p {
   flex-wrap: wrap;
   gap: 10px;
 }
-
 .activeWord {
   min-width: 40px;
   padding: 0rem 0.7rem;
   border-radius: 2.12869rem;
   background: #2B3C4D;
 }
-
 .deleteLastLetter {
   height: fit-content;
   background-color: #2B3C4D;
@@ -279,30 +273,22 @@ p {
   line-height: normal;
   letter-spacing: 16px;
 }
-
 .trueActiveWord {
   transition: background-color 0.3s;
   background-color: #05B741;
 }
-
 .falseActiveWord {
   transition: background-color 0.3s;
   background-color: #B81010;
 }
-
-
 .send {
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
-
 .send img {
   height: 36px;
 }
-
-
-
 
 
 /* Leters */
@@ -311,8 +297,6 @@ p {
   flex-wrap: wrap;
   gap: 6px;
 }
-
-
 .leter {
   display: flex;
   width: 39px;
@@ -320,14 +304,10 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.39131rem;
   border-radius: 0.35rem;
   border: 0.792px solid #74ACDF;
   background: #FFF;
   cursor: pointer;
-}
-
-.leter span {
   color: #2B3C4D;
   text-align: center;
   font-family: Paytone One;
@@ -336,16 +316,10 @@ p {
   font-weight: 400;
   line-height: normal;
 }
-
 .activeButton {
   background-color: #2B3C4D;
-}
-
-.activeButton span {
   color: white;
 }
-
-
 
 @media screen and (max-width:600px) {
   .wordsCont{
