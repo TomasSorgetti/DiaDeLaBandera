@@ -16,6 +16,9 @@ const Word = ({
   setResponse,
   open,
   setOpen,
+  setShake,
+  setSoundPlayErr,
+  setSoundPlayOk,
 }) => {
   const [active, setActive] = useState(false);
   const handleClose = () => setOpen(false);
@@ -51,11 +54,13 @@ const Word = ({
     if (confirm && activeWord === word) {
       // Cuando la palabra escrita por el usuario es igual a la palabra
       setActive(true); // La palabra se muestra
+      setSoundPlayOk(true);
       if (!listCount.includes(activeWord)) {
         // Actualiza el estado de listCount
         setResponse(true);
         setListCount([...listCount, activeWord]);
         setTimeout(() => {
+          setSoundPlayOk(false);
           setActiveWord(""); // Se borra la palabra escrita por el usuario
           setResponse(null);
           setConfirm(false);
@@ -67,14 +72,25 @@ const Word = ({
       const condition = newList.filter((item) => item === activeWord);
       if (condition.length == 0) {
         setResponse(false);
+        setShake(true);
+        setSoundPlayErr(true);
       }
       setTimeout(() => {
+        setSoundPlayErr(false);
+        setShake(false);
         setActiveWord("");
         setConfirm(false);
         setResponse(null);
       }, 1000);
     }
-  }, [activeWord, listCount, newList, setActiveWord, setListCount, confirm]);
+  }, [
+    activeWord,
+    listCount,
+    newList,
+    setActiveWord,
+    setListCount,
+    confirm,
+  ]);
 
   useEffect(() => {
     if (confirm && listCount.includes(activeWord)) {

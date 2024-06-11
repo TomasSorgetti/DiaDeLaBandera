@@ -1,7 +1,5 @@
-import Word from './Word'
+import Word from "./Word";
 import { useState } from "react";
-
-
 
 const Words = ({
   activeWord,
@@ -17,6 +15,9 @@ const Words = ({
   setResponse,
   open,
   setOpen,
+  setShake,
+  setSoundPlayErr,
+  setSoundPlayOk,
 }) => {
   return (
     <div className="wordsCont">
@@ -40,6 +41,9 @@ const Words = ({
               setResponse={setResponse}
               open={open}
               setOpen={setOpen}
+              setShake={setShake}
+              setSoundPlayErr={setSoundPlayErr}
+              setSoundPlayOk={setSoundPlayOk}
             />
           ))}
         </div>
@@ -48,4 +52,4 @@ const Words = ({
   );
 };
 
-export default Words
+export default Words;
