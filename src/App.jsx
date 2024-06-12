@@ -24,7 +24,7 @@ function App() {
   const [clean, setClean] = useState(false); // limpiar las palabras
   const [open, setOpen] = useState(false); // modal al terminar el nivel
   const [shake, setShake] = useState(false);
-  console.log(activeWordIndex);
+
   const [soundPlayOk, setSoundPlayOk] = useState(false);
   const [soundPlayErr, setSoundPlayErr] = useState(false);
   const initializeSounds = () => {
@@ -61,6 +61,7 @@ function App() {
     }
   }, []);
 
+  console.log(activeWordIndex);
   const handleClick = (word, index) => {
     let newWord = activeWord + word;
     setActiveWord(newWord);
@@ -81,6 +82,7 @@ function App() {
 
   const handleSend = () => {
     if (activeWord.length === 0) return;
+    setActiveWordIndex([]);
     setConfirm(true);
   };
 
